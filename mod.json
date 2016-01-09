@@ -1,0 +1,7 @@
+{
+    "BaseDir": "",
+    "IsDevelopment": true,
+    "Name": "KMG Experience",
+    "Project": "KMGExperience.csproj",
+	  "AssetBundleDir": "assetbundle"
+}

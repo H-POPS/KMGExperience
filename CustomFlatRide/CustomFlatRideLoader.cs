@@ -116,12 +116,7 @@ public class CustomFlatRideLoader : MonoBehaviour
         FlatRideScript.setDisplayName(DisplayName);
         FlatRideScript.xSize = x;
         FlatRideScript.zSize = Z;
-        BoundingBox bb = FlatRideScript.gameObject.AddComponent<BoundingBox>();
-        bb.layers = BoundingVolume.Layers.Buildvolume;
-        Bounds B = new Bounds();
-        B.center = new Vector3(0,1,0);
-        B.size = new Vector3(x, 2, Z);
-        bb.setBounds(B);
+       
 
         
     }
@@ -177,6 +172,15 @@ public class CustomFlatRideLoader : MonoBehaviour
     public Color ConvertColor(int r, int g, int b)
     {
         return new Color(r / 255f, g / 255f, b / 255f);
+    }
+    public void AddBoundingBox(GameObject asset , float x, float z)
+    {
+        BoundingBox bb = asset.AddComponent<BoundingBox>();
+        bb.layers = BoundingVolume.Layers.Buildvolume;
+        Bounds B = new Bounds();
+        B.center = new Vector3(0, 1, 0);
+        B.size = new Vector3(x - .01f, 2, z - .01f);
+        bb.setBounds(B);
     }
 }
 

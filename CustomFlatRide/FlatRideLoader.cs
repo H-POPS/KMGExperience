@@ -58,6 +58,7 @@ public class FlatRidesLoader : CustomFlatRideLoader
         };
         base.SetWaypoints(asset, connections);
         asset.transform.position = new Vector3(0,999,0);
+        base.AddBoundingBox(asset, 6, 6);
     }
     public void LoadFlatRides()
     {

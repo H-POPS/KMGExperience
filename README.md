@@ -1,2 +1,4 @@
-# KMG Experience Flat-Ride
-Mod with KMG Experience as custom Flat-Rides
+# CustomFlat-Rides
+Mod more Flat-Rides
+
+See https://parkitectnexus.com/modding-wiki for documentation

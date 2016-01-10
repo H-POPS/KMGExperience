@@ -2,13 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using System.Reflection;
-
-public class Connection
-{
-    public int value1;
-    public int value2;
-}
 
 public class CustomFlatRideLoader : MonoBehaviour
 {
@@ -16,7 +9,6 @@ public class CustomFlatRideLoader : MonoBehaviour
     private List<BuildableObject> _sceneryObjects = new List<BuildableObject>();
 
     public string Path;
-    public List<Connection> Connections = new List<Connection> { };
     public string Identifier;
     public FlatRide FlatRideComponent;
 
@@ -139,7 +131,7 @@ public class CustomFlatRideLoader : MonoBehaviour
     {
         CustomColors cc = asset.AddComponent<CustomColors>();
         cc.setColors(C);
-       
+
         foreach (Material material in AssetManager.Instance.objectMaterials)
         {
             if (material.name == "CustomColorsSpecular")

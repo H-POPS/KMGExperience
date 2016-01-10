@@ -26,7 +26,7 @@ public class Main : IMod
     }
 
     public string Name { get { return "KMG Experience"; } }
-    public string Description { get { return "KMG Experience"; } }
+    public string Description { get { return "KMG Experience Mod"; } }
     public string Path { get; set; }
     public string Identifier { get; set; }
 }

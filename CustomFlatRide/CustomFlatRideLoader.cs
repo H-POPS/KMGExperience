@@ -18,7 +18,7 @@ public class CustomFlatRideLoader : MonoBehaviour
         try
         {
 
-            GameObject hider = new GameObject();
+            GameObject asset = new GameObject();
 
             char dsc = System.IO.Path.DirectorySeparatorChar;
 
@@ -32,10 +32,10 @@ public class CustomFlatRideLoader : MonoBehaviour
 
                 try
                 {
-                    GameObject asset = Instantiate(bundle.LoadAsset(PrefabName)) as GameObject;
+                    asset = Instantiate(bundle.LoadAsset(PrefabName)) as GameObject;
                     bundle.Unload(false);
 
-                    hider.SetActive(false);
+                   
                     return asset;
 
                 }
@@ -46,7 +46,6 @@ public class CustomFlatRideLoader : MonoBehaviour
 
                     LogException(e);
                     bundle.Unload(false);
-                    hider.SetActive(false);
                     return null;
                 }
 
@@ -69,7 +68,6 @@ public class CustomFlatRideLoader : MonoBehaviour
         Waypoints points = asset.GetComponent<Waypoints>();
         foreach (Transform T in asset.transform.FindChild("WayPoints").transform)
         {
-            Debug.Log("Waypoint name : " + T.name);
             Waypoint p = new Waypoint();
 
             if (T.name.StartsWith("Outer"))
@@ -100,9 +98,7 @@ public class CustomFlatRideLoader : MonoBehaviour
                     points.waypoints[currentIndex].connectedTo.Add(connections[i - 1]);
                 }
             }
-            GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            sphere.transform.position = p.getWorldPosition(asset.transform);
-            sphere.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+            
         }
     }
     public void BasicFlatRideSettings(FlatRide FlatRideScript, string DisplayName, float price, float excitement, float intensity, float nausea, int x, int Z)
@@ -120,7 +116,14 @@ public class CustomFlatRideLoader : MonoBehaviour
         FlatRideScript.setDisplayName(DisplayName);
         FlatRideScript.xSize = x;
         FlatRideScript.zSize = Z;
+        BoundingBox bb = FlatRideScript.gameObject.AddComponent<BoundingBox>();
+        bb.layers = BoundingVolume.Layers.Buildvolume;
+        Bounds B = new Bounds();
+        B.center = new Vector3(0,1,0);
+        B.size = new Vector3(x, 2, Z);
+        bb.setBounds(B);
 
+        
     }
     public void AddRestraints(GameObject asset, Vector3 closeAngle)
     {

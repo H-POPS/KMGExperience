@@ -120,7 +120,7 @@ public class CustomFlatRideLoader : MonoBehaviour
         FlatRideScript.fenceGO = AssetManager.Instance.rideFenceGO;
         FlatRideScript.entranceGO = AssetManager.Instance.rideEntranceGO;
         FlatRideScript.exitGO = AssetManager.Instance.rideExitGO;
-        typeof(FlatRide).GetField("entranceExitBuilderGO", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(FlatRideScript, AssetManager.Instance.flatRideEntranceExitBuilderGO);
+        FlatRideScript.entranceExitBuilderGO = AssetManager.Instance.flatRideEntranceExitBuilderGO;
         FlatRideScript.price = price;
         FlatRideScript.excitementRating = excitement;
         FlatRideScript.intensityRating = intensity;

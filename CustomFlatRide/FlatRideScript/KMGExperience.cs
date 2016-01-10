@@ -25,13 +25,13 @@ public class KMGExperience : FlatRide
 
     public FabricEvent lowerArmSound;
 
-    private Quaternion armTargetRotation = Quaternion.Euler(50f, 0f, 0f);
+    private Quaternion armTargetRotation = Quaternion.Euler(30f, 0f, 0f);
 
-    private int accelerationSpeed = 122;
+    private int accelerationSpeed = 22;
 
     private float maxSpeed = 60f;
 
-    private float armSpinAxisMaxSpeed = 70f;
+    private float armSpinAxisMaxSpeed = 120f;
 
     [Serialized]
     private KMGExperience.State currentState;

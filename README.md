@@ -1,2 +1,2 @@
-# CustomFlat-Rides
-Mod more Flat-Rides
+# KMGExperience Flat-Ride
+Mod with KMG Experience as custom Flat-Rides

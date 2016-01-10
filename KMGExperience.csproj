@@ -66,6 +66,7 @@
     <Content Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="LICENSE" />
     <None Include="mod.json" />
     <None Include="README.md" />
   </ItemGroup>

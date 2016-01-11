@@ -21,7 +21,7 @@ public class FlatRidesLoader : CustomFlatRideLoader
         KMGE.mainAxis = Main[0];
         base.AddColors(asset, new Color[2]{ base.ConvertColor(171, 18, 16), Color.yellow });
         base.AddRestraints(asset, new Vector3(0, 0, 120));
-        base.BasicFlatRideSettings(KMGE,"KMG Expirence", 800, .7f, .4f, .7f, 6, 6);
+        base.BasicFlatRideSettings(KMGE,"KMG Expierence", 800, .7f, .4f, .7f, 6, 6);
         List<int> connections = new List<int>()
         {
             0,22,

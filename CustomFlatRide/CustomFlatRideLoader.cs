@@ -102,15 +102,16 @@ public class CustomFlatRideLoader : MonoBehaviour
             
         }
     }
-    public void BasicFlatRideSettings(FlatRide FlatRideScript, string DisplayName, float price, float excitement, float intensity, float nausea, int x, int Z)
+        public void BasicFlatRideSettings(FlatRide FlatRideScript, string DisplayName, float price, float excitement, float intensity, float nausea, int x, int Z)
     {
         _sceneryObjects.Add(FlatRideScript);
         AssetManager.Instance.registerObject(FlatRideScript);
         FlatRideScript.fenceGO = AssetManager.Instance.rideFenceGO;
-        FlatRideScript.entranceGO = AssetManager.Instance.rideEntranceGO;
-        FlatRideScript.exitGO = AssetManager.Instance.rideExitGO;
+        FlatRideScript.entranceGO = AssetManager.Instance.attractionEntranceGO;
+        FlatRideScript.exitGO = AssetManager.Instance.attractionExitGO;
         FlatRideScript.entranceExitBuilderGO = AssetManager.Instance.flatRideEntranceExitBuilderGO;
         FlatRideScript.price = price;
+        FlatRideScript.categoryTag = "Attractions/Flat Ride";
         FlatRideScript.excitementRating = excitement;
         FlatRideScript.intensityRating = intensity;
         FlatRideScript.nauseaRating = nausea;
